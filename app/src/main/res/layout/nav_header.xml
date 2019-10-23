@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:padding="10dp"
+        android:background="?attr/colorPrimary">
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/header"
+            android:layout_centerInParent="true"/>
+
+    <Button
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:background="@drawable/shape_btn_sign_in"
+            android:textColor="@color/colorWhite"
+            android:text="签到"/>
+
+    <TextView
+            android:id="@+id/identity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="欢迎你，"
+            android:textSize="14sp"
+            android:textColor="#FFF"/>
+    <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/identity"
+            android:text="Bob Du"
+            android:textSize="14sp"
+            android:textColor="#FFF"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true">
+        <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/img_grade"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="#FF7256"
+                android:text="：23"/>
+    </LinearLayout>
+</RelativeLayout>

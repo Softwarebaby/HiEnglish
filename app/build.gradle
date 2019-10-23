@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+def lib = rootProject.ext.libraries
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.du.hienglish"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:${lib.support_version}"
+    implementation "com.android.support:design:${lib.support_version}"
+    implementation "com.android.support:recyclerview-v7:${lib.support_version}"
+    implementation "com.android.support:cardview-v7:${lib.support_version}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    
+    implementation project(':LeRecorderSkin')
+    implementation project(':vitamio')
+
+    //Dagger2
+    implementation "com.google.dagger:dagger-android:${lib.dagger}"
+    implementation "com.google.dagger:dagger-android-support:${lib.dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${lib.dagger}"
+    annotationProcessor "com.google.dagger:dagger-android-processor:${lib.dagger}"
+
+    //RxJava
+    implementation "io.reactivex:rxjava:${lib.rxjava}"
+    implementation "io.reactivex:rxandroid:${lib.rxandroid}"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${lib.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${lib.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava:${lib.adapter_rxJava}"
+
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:${lib.okhttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${lib.okhttp}"
+
+    //UI
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:${lib.glide}"
+
+    //ButterKnife
+    implementation "com.jakewharton:butterknife:${lib.butterknife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${lib.butterknife}"
+}

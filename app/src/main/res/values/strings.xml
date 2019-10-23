@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hi English</string>
+    <string name="login">登&#160;&#160;&#160;录</string>
+    <string name="to_register">还没有账号？前往注册</string>
+    <string name="welcome">欢迎使用！</string>
+    <string name="identity">您的身份是：</string>
+</resources>

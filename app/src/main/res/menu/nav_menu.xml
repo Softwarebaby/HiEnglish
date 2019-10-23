@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_live"
+                android:icon="@drawable/img_live"
+                android:title="直播课程" />
+        <item
+                android:id="@+id/nav_video"
+                android:icon="@drawable/img_video"
+                android:title="视频课程" />
+        <item
+                android:id="@+id/nav_im"
+                android:icon="@drawable/img_im"
+                android:title="在线答疑" />
+        <item
+                android:id="@+id/nav_data"
+                android:icon="@drawable/img_data"
+                android:title="学习资料" />
+        <item
+                android:id="@+id/nav_test"
+                android:icon="@drawable/img_test"
+                android:title="自我测评" />
+    </group>
+</menu>
